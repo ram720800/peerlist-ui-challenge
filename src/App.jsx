@@ -62,7 +62,7 @@ const App = () => {
           animate={{ y: [-1, 10, 1] }}
           transition={{ duration: 4, repeat: Infinity, times: [0, 0.5, 1] }}
         >
-          <div className="absolute right-1 w-40 h-40 rounded-full bg-gradient-to-br from-wl1 to-green1 blur-3xl opacity-80"></div>
+          <div className="absolute right-1 w-40 h-40 rounded-full bg-gradient-to-br from-wl1 to-green1 blur-2xl opacity-80"></div>
           <img
             src="peerlist.png"
             alt="peerlist"
@@ -75,7 +75,7 @@ const App = () => {
           animate={{ y: [-1, 10, 1] }}
           transition={{ duration: 4, repeat: Infinity, times: [0, 0.5, 1] }}
         >
-          <div className="absolute left-1 w-40 h-40 rounded-full bg-gradient-to-br from-wl1 to-bl1 blur-3xl opacity-80"></div>
+          <div className="absolute left-1 w-40 h-40 rounded-full bg-gradient-to-br from-wl1 to-bl1 blur-2xl opacity-80"></div>
           <img
             src="aceternity.png"
             alt="aceternity"
