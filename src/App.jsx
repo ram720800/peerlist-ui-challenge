@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { projects } from "./lib/projects.js";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+
 const App = () => {
   return (
     <div
-      className="min-h-screen py-6 g3 p-1"
+      className="relative min-h-screen py-6 w-full p-1"
       style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, rgba(247, 228, 236) 1px, transparent 0)`,
         backgroundSize: "8px 8px",
@@ -59,7 +60,7 @@ const App = () => {
       </div>
       <div className="relative flex items-center justify-center">
         <motion.div
-          animate={{ y: [-1, 10, 1] }}
+          animate={{ y: [-1, 20, 1] }}
           transition={{ duration: 4, repeat: Infinity, times: [0, 0.5, 1] }}
         >
           <div className="absolute right-1 w-40 h-40 rounded-full bg-gradient-to-br from-wl1 to-green1 blur-2xl opacity-80"></div>
@@ -72,7 +73,7 @@ const App = () => {
           />
         </motion.div>
         <motion.div
-          animate={{ y: [-1, 10, 1] }}
+          animate={{ y: [-1, 20, 1] }}
           transition={{ duration: 4, repeat: Infinity, times: [0, 0.5, 1] }}
         >
           <div className="absolute left-1 w-40 h-40 rounded-full bg-gradient-to-br from-wl1 to-bl1 blur-2xl opacity-80"></div>
@@ -94,11 +95,11 @@ const App = () => {
           UI Animation Challenge
         </div>
         <div className="text-pink3 my-10 text-lg font-semibold">
-          Submission by Ramesh(ram720800)
+          Submission by ram720800
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2 justify-center">
+      <div className="pt-10 flex flex-wrap max-sm:gap-y-6 gap-2 justify-center">
         {projects.map((project) => {
           const [loaded, setLoaded] = useState(false);
           return (
@@ -107,11 +108,11 @@ const App = () => {
               className={`relative flex flex-col justify-between w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] rounded-xl`}
             >
               <div
-                className={`aspect-video rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.08),0_15px_35px_-5px_rgba(25,28,33,0.2)] ring-1 ring-gray-950/5 hover:ring-[#fc75b2]/5 transition overflow-hidden pb-16 bg-pink ${
+                className={`relative rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.08),0_15px_35px_-5px_rgba(25,28,33,0.2)] ring-1 ring-gray-950/5 hover:ring-[#fc75b2]/5 transition overflow-hidden pb-16 bg-pink ${
                   project.height
-                } ${project.id === 4 ? "sm:-mt-32" : ""} ${
-                  project.id === 5 ? "sm:-mt-4" : ""
-                } `}
+                } ${project.id === 4 ? "lg:-mt-80" : ""} ${
+                  project.id === 5 ? "lg:-mt-48" : ""
+                } ${project.id !== 6 ? "opacity-100" : "opacity-0"} `}
               >
                 <video
                   src={project.video}
@@ -120,16 +121,24 @@ const App = () => {
                   muted
                   playsInline
                   className={`w-full h-full object-cover transition duration-700 ${
-                    loaded ? "opacity-100" : "opacity-0"
+                    loaded ? "opacity-100" : "opacity-0 blur-3xl"
                   }`}
                   onLoadedData={() => setLoaded(true)}
                 />
+                <div className="flex items-center justify-between absolute bottom-16 w-full p-4">
+                  <p className="text-bl1 text-sm font-medium">
+                    {project.title}
+                  </p>
+                  <p className="text-gray-500 text-sm font-medium">
+                    April 2025
+                  </p>
+                </div>
                 {project.id !== 6 ? (
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center bg-gray-200 shadow-2xl border border-[#f7f7f7] my-3 mx-1 p-2 rounded-md"
+                    className="flex items-center justify-center shadow-2xl bg-[#f7f7f7] hover:bg-[#f7f7f7]/80 my-3 mx-1 p-2 rounded-md"
                   >
                     <div className=" text-pink4 text-center">
                       Live Prototype

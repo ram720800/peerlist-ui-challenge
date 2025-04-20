@@ -20,15 +20,11 @@
 .g1 {
   background: linear-gradient(220deg, #e3e5e8 40%, #f7d1e2 100%);
 }
-.g2 {
-  background: linear-gradient(180deg, #f5e8ee 0%, #137e21 50%);
-}
+
 .g3{
   background: linear-gradient(180deg, #f2f3f5 60%, #f9b0d1 100%);
 }
-.g4 {
-  background: linear-gradient(180deg, #f5e8ee 0%, #4c9e57 50%);
-}
+
 
 body,
 html {
